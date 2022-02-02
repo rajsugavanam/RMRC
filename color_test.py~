@@ -1,0 +1,21 @@
+import cv2 as cv
+import numpy as np
+from time import sleep
+import timeit
+
+
+checkArea = [20,20]
+def pixelChange(img, randomcolor):
+    for i in range(img.shape[0]):          # Height (i)
+        for j in range(img.shape[1]):      # Width (j)
+            # for k in range(img.shape[2]):  # Color Depth (k)
+                # img.itemset((i,j,k), randomcolor[k])
+            img[i][j] = randomcolor
+            
+
+img = cv.imread("testimage.jpg")
+randomcolor = img[5,5]
+funcTime = timeit.timeit(lambda: pixelChange(img, randomcolor), number=5)
+print(funcTime)
+cv.imshow("testimage.jpg", img)
+cv.waitKey()
