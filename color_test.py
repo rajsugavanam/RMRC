@@ -17,16 +17,9 @@ def detectColor(imgArea):
     colorAverage = colorTotal / (imgArea.shape[0]*imgArea.shape[1])
     return colorAverage
 
-def getKey(dict, desiredValue):
-    for key, value in dict.items():
-        if desiredValue == value:
-            return key
- 
-    return None
-
 def main():
 
-    img = cv.imread("color_grid.png")
+    img = cv.imread("testimage.jpg")
     sizeX = img.shape[0]
     sizeY = img.shape[1]
     
@@ -45,8 +38,7 @@ def main():
     print("BGR Color for quintant TR: %s" % colorBL)
     print("BGR Color for quintant BR: %s" % colorBR)
     print("BGR Color for quintant CT: %s" % colorCT)
-    
-    cv.imshow("color_grid.png", img)
+
     cv.waitKey()
 
 main()
