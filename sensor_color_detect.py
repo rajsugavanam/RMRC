@@ -18,6 +18,7 @@ def detectColor(imgArea):
 	colorAverage = colorTotal / (imgArea.shape[0]*imgArea.shape[1])
 	return colorAverage
 
+
 def colorToString(colorVector):
 	""" Convert a color to a string representation """
 	b = colorVector[0]
@@ -35,7 +36,7 @@ def colorToString(colorVector):
 	elif (r >= 2*b and g >= 2*b) and r-g < 20:
 		return "Yellow"
 	elif (g >= 2*r and b >= 2*r) and g-b < 20:
-		return "Magenta"
+		return "Cyan"
 	elif max(r,g,b)-min(r,g,b) < 50:
 		return "Black"
 	elif max(r,g,b)-min(r,g,b) > 200:
